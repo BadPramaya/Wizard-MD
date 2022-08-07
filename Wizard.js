@@ -2878,11 +2878,23 @@ case 'antiwame': {
    db.chats[m.chat].wame = false
    reply(`Anti Wa.me is not activated!`)
    } else {
-    let buttons = [
-{ buttonId: 'antiwame on', buttonText: { displayText: 'On' }, type: 1 },
-{ buttonId: 'antiwame off', buttonText: { displayText: 'Off' }, type: 1 }
-  ]
-  await Wizard.sendButtonText(m.chat, buttons, `Mode Anti Wa.me`, Wizard.user.name, m)
+  let buttons = [{
+                                urlButton: {
+                                    displayText: 'Wiki',
+                                    url: `WIKI VERUNNE OLLU MONU WAIT`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'ON✅',
+                                    id: '${command} on'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'OFF❌',
+                                    id: '${command} off'
+                                }
+                            }]
+ Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
    }
 }
 break
@@ -2898,11 +2910,23 @@ break
    db.chats[m.chat].mute = false
    reply(`${Wizard.user.name} has been unmuted in this group!`)
    } else {
-    let buttons = [
-{ buttonId: 'mute on', buttonText: { displayText: 'ON' }, type: 1 },
-{ buttonId: 'mute off', buttonText: { displayText: 'OFF' }, type: 1 }
-  ]
-  await Wizard.sendButtonText(m.chat, buttons, `Mute Bot`, Wizard.user.name, m)
+     let cmd = [{
+                                urlButton: {
+                                    displayText: 'Wiki',
+                                    url: `WIKI VERUNNE OLLU MONU WAIT`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'ON✅',
+                                    id: '${command} on'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'OFF❌',
+                                    id: '${command} off'
+                                }
+                            }]
+  Wizard.relayMessage(m.chat, template.message, { messageId: template.key.id })
    }
 }
 break
@@ -3450,7 +3474,7 @@ for (let res of anu.results) {
 }
     }
     break
- case 'toimage': case 'toimg': {
+ case 'toimage': case 'photo': case 'toimg': {
    if (!quoted) throw '*Reply Image*'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
@@ -3465,7 +3489,7 @@ for (let res of anu.results) {
    })
  }
  break
-case 'tomp4': case 'tovideo': {
+case 'tomp4':  case 'video': case 'tovideo': {
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
@@ -3496,7 +3520,7 @@ let { webp2mp4File } = require('./Launcher/lib/uploader')
           })
           })
   break
- case 'toaud': case 'toaudio': {
+ case 'toaud': case 'mp3': case 'tomp3': {
  if (!/video/.test(mime) && !/audio/.test(mime)) throw `Send/Reply Video/Audio You Want Audio With Caption ${prefix + command}`
  if (!quoted) throw `Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`
  replay(mess.wait)
@@ -3506,18 +3530,7 @@ let { webp2mp4File } = require('./Launcher/lib/uploader')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
  }
  break
- case 'tomp3': {
- if (/document/.test(mime)) throw `Send/Reply Video/Audio You Want to Convert into MP3 With Caption ${prefix + command}`
- if (!/video/.test(mime) && !/audio/.test(mime)) throw `Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`
- if (!quoted) throw `Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`
- replay(mess.wait)
- let media = await quoted.download()
- let { toAudio } = require('./Launcher/lib/converter')
- let audio = await toAudio(media, 'mp4')
- Wizard.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Converted By ${Wizard.user.name}.mp3`}, { quoted : m })
- }
- break
- case 'tovn': case 'toptt': {
+ case 'tovn':  case 'vn': case 'toptt': {
  if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
  if (!quoted) throw `Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`
  replay(mess.wait)
@@ -3527,7 +3540,7 @@ let { webp2mp4File } = require('./Launcher/lib/uploader')
  Wizard.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
  }
  break
- case 'togif': {
+  case 'gif': case 'togif': {
    if (!quoted) throw 'Reply Image'
    if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
    replay(mess.wait)
@@ -3538,7 +3551,7 @@ let { webp2mp4File } = require('./Launcher/lib/uploader')
    await fs.unlinkSync(media)
  }
  break
-case 'tourl': {
+ case 'url':case 'tourl': {
    replay(mess.wait)
 let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./Launcher/lib/uploader')
    let media = await Wizard.downloadAndSaveMediaMessage(quoted)
@@ -3614,7 +3627,7 @@ case 'google': {
     }
 }
    break
-case 'gimage': case 'googleimage': {
+ case 'image':case 'gimage': case 'googleimage': {
 reply(mess.wait)
 if (!text) throw `Example : ${prefix + command} ml nana`
 let gis = require('g-i-s')
