@@ -1,5 +1,5 @@
 process.on('uncaughtException', console.error)
-require('./bot')
+require('./Launcher/connection.js')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, WAZimBotIncection, MessageType, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType, fetchLatestBaileysVersion } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const util = require('util')
