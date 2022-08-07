@@ -35,10 +35,10 @@ const { mediafireDl } = require('./Launcher/lib/mediafire.js')
 const { lirikLagu } = require('./Launcher/lib/lirik.js')
 const { fromBuffer } = require('file-type')
 const mel = require('kitsune-api');
-let { msgFilter } = require('./Library/Required/zimbotii.js')
+let { msgFilter } = require('./Library/Required/wiz.js')
 const { Boom } = require("@hapi/boom")
 const ffmpeg = require('fluent-ffmpeg')
-const { checkPetualangUser, addInventori, addBesi, sellBesi, getBesi, addDm, sellDm, getDm, addEmas, sellEmas, getEmas, addFish, sellFish, getFish } = require('./tez.js')
+const { checkPetualangUser, addInventori, addBesi, sellBesi, getBesi, addDm, sellDm, getDm, addEmas, sellEmas, getEmas, addFish, sellFish, getFish } = require('./Library/test.js')
 const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLevelingLevel, getLevelingXp } = require('./Launcher/lib/level2')
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./Library/limit')
 //xp and leveling database⧈⧈⧈⧈
