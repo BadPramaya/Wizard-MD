@@ -1,4 +1,4 @@
-require('./bot')
+require('./Launcher/connection.js')
 const { default: WizardConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
 const ssname = `${sessionName}.json`
 const pino = require('pino')
