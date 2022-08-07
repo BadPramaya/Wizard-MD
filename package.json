@@ -1,7 +1,7 @@
 {
-  "name": "zimbot-v4",
+  "name": "Wizard-MD",
   "version": "4.0.1",
-  "description": "Multi device wa bot created by Zim Bot Inc.",
+  "description": "Multi device whatsapp bot by Ajmal",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
