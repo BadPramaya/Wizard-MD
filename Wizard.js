@@ -76,7 +76,7 @@ let tebakkalimat = db.game.kalimat = []
 let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
-let thumbwiz = fs.readFileSync('./Library/image/drips.jpg')
+let thumbwiz = await axios.get (global.logo, {responseType:'arraybuffer'})
 module.exports = Wizard = async (Wizard, m, chatUpdate, store) => {
 try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -150,7 +150,7 @@ return dDisplay + hDisplay + mDisplay + sDisplay;
 
 
 const reply = (teks) => {
-    Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: caption, thumbnail: fs.readFileSync('./Library/image/drips.jpg'),sourceUrl: ("github.com/Ajmal-Achu")}}})
+    Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, detectLinks: true,body: caption, thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}),sourceUrl: ("github.com/Ajmal-Achu")}}})
 }
 const replay = (teks) => {
     Wizard.sendMessage(m.chat, {text: teks, contextInfo: {"externalAdReply": {title: botname,mediaType: 3, renderLargerThumbnail: false, showAdAttribution: true, body: caption, thumbnail: thumbwiz,sourceUrl: ("github.com/Ajmal-Achu")}}})
@@ -1074,7 +1074,6 @@ Wizard.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 if (budy.length > 3500) {
 if (!m.isGroup) return
-if (!isAntiVirtex) return
 if (groupAdmins) return
 reply('Mark as read\n'.repeat(300))
 reply(`*DETECTED*\n\n*You sent a virtex, sorry you will be kicked from the group*`)
@@ -1157,7 +1156,7 @@ setInterval(() => {
 //But5Loc
 var nextMinutes = Math.random() * 300 + 30;
 setTimeout(function(){
-  Wizard.sendMessage(Wizard.user.id, {text: `*Wizard MD ANNOUNCEMENT:* *SUBSCRIBE TO OUR CHANNEL*\n\n*YOUTUBE:* https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*`,contextInfo: { externalAdReply:{title:botname,body:caption,showAdAttribution: true,mediaType:2,thumbnail: fs.readFileSync(`./drips.jpg`) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
+  Wizard.sendMessage(Wizard.user.id, {text: `*Wizard MD ANNOUNCEMENT:* *SUBSCRIBE TO OUR CHANNEL*\n\n*YOUTUBE:* https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*`,contextInfo: { externalAdReply:{title:botname,body:caption,showAdAttribution: true,mediaType:2,thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
   //anouncement by drips 
 }, nextMinutes * 300 * 1000);
 const send5Butlmg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
@@ -2191,7 +2190,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   teks = `
   *${global.botname}*\n\n*TUTORIAL:* github.com/Ajmal-Achu\n*GITHUB:* https://github.com/Ajmal-Achu/Wizard-MD\n\n*WEBSITE:* https://A-J-M-A-L.github.io\n\n You Can Support Us By Following Us On Social Media😊`
   let buttons = [
-  {buttonId: `menu`, buttonText: {displayText: 'MENU <3'}, type: 1}
+ {buttonId: `menu`, buttonText: {displayText: 'MENU <3'}, type: 1}
   ]
   let buttonMessage = {
   image: thumb,
@@ -2204,7 +2203,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   title: watermark,
   body: caption, 
   showAdAttribution: true,
-  thumbnail: fs.readFileSync("drips.jpg"),
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}),
   mediaType:1,
   mediaUrl: 'github.com/Ajmal-Achu',
   sourceUrl: "github.com/Ajmal-Achu"
@@ -2231,7 +2230,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   title:"DONATE ME",
   body: caption, 
   showAdAttribution: true,
-  thumbnail: fs.readFileSync("drips.jpg"),
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}),
   mediaType:1,
   mediaUrl: 'github.com/Ajmal-Achu',
   sourceUrl: "github.com/Ajmal-Achu"
@@ -3303,7 +3302,7 @@ if (!regex1.test(args[0])) throw 'link!'
         body:caption,
         showAdAttribution: true,
         mediaType:2,
-        thumbnail: fs.readFileSync(`./drips.jpg`) ,
+        thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
         mediaUrl:tutorial, 
         sourceUrl: tutorial }}}, {quoted: m})
 break
@@ -3757,38 +3756,6 @@ replay(mess.wait)
  }
  break
 
-//------NSFW FEATURES-----\\
-
-case 'masturbation': 
-case 'jahy': 
-case 'hentai': 
-case 'glasses': 
-case 'gangbang': 
-case 'foot': 
-case 'femdom': 
-case 'cum': 
-case 'ero': 
-case 'cuckold': 
-case 'blowjob': 
-case 'bdsm': 
-case 'ahegao': 
-case 'ass': 
-case 'orgy': 
-case 'panties': 
-case 'pussy': 
-case 'thighs': 
-case 'yuri': 
-case 'tentacles': 
-if (!m.isGroup) return replay(mess.group)
-if (!isAntinsfw) return reply('*NSFW turned on ready to masturbate*')
-try{
-reply(mess.wait)
-hwindi = await fetchJson(`https://myselfff.herokuapp.com/docs/nsfw/${command}`)
-stallone = await getBuffer(hwindi.result)
-Wizard.sendMessage(from, {image:stallone},{quoted:m})
-} catch (e) {error("Error")}
-break
-//---END HERE-------\\
 
 //CREATED BY DRIPS
 
@@ -3986,26 +3953,36 @@ case 'update':
 
   await git.fetch();
   var commits = await git.log(['main' + '..origin/' + 'main']);
-  if (commits.total === 0) return reply("*No pending updates!*")
+  if (commits.total === 0) return reply("You have already installed the latest version ")
   let update = ""
   commits["all"].map((commit) => {
     update += `${' • '}*${
       commit.message
-    }* *[${commit.date.substring(0, 10)}]* \n`
+    }* by ${commit.author_name} *[${commit.date.substring(0, 10)}]* \n`
   })
-  var changelog = "*Pending updates:*\n\n" + update;
-     reply(changelog)
-    await Wizard.sendMessage(m.chat, {text: ` *type updatenow to update the bot*`});
+  var changelog = "*New updates:*\n\n" + update;
+ 
+ let buttonsUpdate = [
+  {buttonId: `${prefix}updatenow`, buttonText: {displayText: 'Start Updating🚀'}, type: 1}
+]
 
+ let buttonMessageUpdate = {
+   text: changelog,
+   footer: `Updates Available`,
+   buttons: buttonsUpdate,
+   headerType: 1
+ }
+ Wizard.sendMessage(m.chat, buttonMessageUpdate)
+   
 break
 case 'updatenow':
   
     const heroku = new Heroku({ token: process.env.HEROKU_API_KEY })
   await git.fetch();
       var commits = await git.log(['main' + '..origin/' + 'main'])
-  if (commits.total === 0) { Wizard.sendMessage(m.chat, { text:"_Bot up to date_"})  } else {
+  if (commits.total === 0) { Wizard.sendMessage(m.chat, { text:"_Latest version has been already installed_"})  } else {
 
-        await Wizard.sendMessage(m.chat, {text: "_Build started ⏫_"})
+        await Wizard.sendMessage(m.chat, {text: "_Started Updating_"})
        if (true) {
             try {
                 var app = await heroku.get('/apps/' + Config.HEROKU_APP_NAME)
@@ -4033,7 +4010,7 @@ case 'updatenow':
                     }
             await git.push('heroku', 'main');
 
-                await Wizard.sendMessage(m.chat, {text:"_Finished build! Restarting.._"})
+                await Wizard.sendMessage(m.chat, {text:"_Updated Successfully ✅_"})
 
         } else {
             git.pull((async (err, update) => {
@@ -4160,14 +4137,7 @@ let yts = require("yt-search")
 let search = await yts(text)
 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
 let buf = await getBuffer(anu.thumbnail)
-let caption = `
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-       ⟮ _*◉ʏᴏᴜᴛᴜʙᴇ ᴍᴜꜱɪᴄ◉*_ ⟯ 
-   
-0.02━◉━━━━━━━━━━━━3.26
-      🔂   ⏪   ⏸️     ⏩  🎵
-
-*◉Tɪᴛʟᴇ :* ${anu.title}
+let caption = `*◉Tɪᴛʟᴇ :* ${anu.title}
 *◉Sɪᴢᴇ :* ${anu.filesize}
 *◉Uʀʟ :* ${anu.url}
 *◉Dᴇꜱᴄʀɪᴘᴛɪᴏɴ :* ${anu.description}
@@ -4180,16 +4150,6 @@ hydratedContentText: caption,
 imageMessage: message.imageMessage,
 hydratedFooterText: `${botname}`,
 hydratedButtons: [{
-urlButton: {
-displayText: 'SOURCE VIDEO',
-url: `${anu.url}`
-}
-}, {
-urlButton: {
-displayText: `GITHUB`, 
-url: `https://github.com/Ajmal-Achu/Wizard-MD`
-}
-}, {
 quickReplyButton: {
 displayText: `VIDEO`,
 id: `${prefix}ytmp4 ${anu.url}`
@@ -4220,12 +4180,7 @@ if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you pr
 let quality = args[1] ? args[1] : '128kbps'
 let media = await yta(text, quality)
 if (media.filesize >= 100000) return m.reply('*File Over Limit* '+util.format(media))
-let caption = `
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-    ⟮ _*◉ʏᴏᴜᴛᴜʙᴇ ᴅᴏᴡɴʟᴏᴀᴅ◉*_ ⟯ 
-   
-0.02━◉━━━━━━━━━━━━3.26
-      🔂   ⏪   ⏸️     ⏩  🎵\n\n*◉TITLE :* ${media.title}\n*◉FILESIZE :* ${media.filesizeF}\n*◉URL :* ${isUrl(text)}\n*◉EXT :* MP3\n*◉RESOLUTION :* ${args[1] || '128kbps'}\n\n*${global.watermark}*`
+let caption = `*◉TITLE :* ${media.title}\n*◉FILESIZE :* ${media.filesizeF}\n*◉URL :* ${isUrl(text)}\n*◉EXT :* MP3\n*◉RESOLUTION :* ${args[1] || '128kbps'}\n\n*${global.watermark}*`
 buf = await getBuffer(media.thumb)
 Wizard.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m }).catch((err) => m.reply('*Sorry, the link you provided is not valid*'))   
 Wizard.sendMessage(m.chat, {document:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{
@@ -4233,7 +4188,7 @@ title:botname,
 body:caption,
 showAdAttribution: true,
 mediaType:2,
-thumbnail: fs.readFileSync(`./drips.jpg`) ,
+thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4245,12 +4200,7 @@ if (!isUrl(args[0]) && !args[0].includes('youtube.com')) throw '*The link you pr
 let quality = args[1] ? args[1] : '128kbps'
 let media = await yta(text, quality)
 if (media.filesize >= 100000) return m.reply('*File Over Limit* '+util.format(media))
-let caption = `
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-    ⟮ _*◉ʏᴏᴜᴛᴜʙᴇ ᴅᴏᴡɴʟᴏᴀᴅ◉*_ ⟯ 
-   
-0.02━◉━━━━━━━━━━━━3.26
-      🔂   ⏪   ⏸️     ⏩  🎵*\n\n*◉TITLE :* ${media.title}\n*◉FILESIZE :* ${media.filesizeF}\n*◉URL :* ${isUrl(text)}\n*◉EXT :* MP3\n*◉RESOLUTION :* ${args[1] || '128kbps'}\n\n*${global.watermark}*`
+let caption = `TITLE :* ${media.title}\n*FILESIZE :* ${media.filesizeF}\n*URL :* ${isUrl(text)}\n*EXT :* MP3\n*RESOLUTION :* ${args[1] || '128kbps'}\n\n*${global.watermark}*`
 buf = await getBuffer(media.thumb)
 Wizard.sendMessage(m.chat, { image: { url: media.thumb }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m }).catch((err) => m.reply('*Sorry, the link you provided is not valid*'))   
 Wizard.sendMessage(m.chat, {audio:{url:media.dl_link}, mimetype:"audio/mpeg", fileName: `${media.title}.mp3`,  quoted: m, contextInfo: { externalAdReply:{
@@ -4258,7 +4208,7 @@ title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
-thumbnail: fs.readFileSync(`./drips.jpg`) ,
+thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4283,7 +4233,7 @@ title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
-thumbnail: fs.readFileSync(`./drips.jpg`) ,
+thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4356,7 +4306,7 @@ Wizard.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: fs.readFileSync(`./drips.jpg`) ,
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4519,7 +4469,7 @@ case 'fbdl': case 'fb': case 'facebook': case 'fbvideo': {
       body:caption,
       showAdAttribution: true,
       mediaType:2,
-      thumbnail: fs.readFileSync(`./drips.jpg`) ,
+      thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
       mediaUrl:tutorial, 
       sourceUrl: tutorial }}}, {quoted: m})
      
@@ -4759,7 +4709,7 @@ let link = await getBuffer(i.url)
 Wizard.sendMessage(m.chat, { image: link, jpegThumbnail: await getBuffer(i.preview), caption: `*Instagram ${i.type}*` }, { quoted: m })          
 }
  }
-}).catch((err) => reply(`*Sorry Instagram Instagram ${text} Not found*`))
+}).catch((err) => reply(`*Wrong command, type .igreel to download it*`))
 }		
 
 break
@@ -4777,7 +4727,7 @@ reply(`*Failed to download media and send videos*`)
 })
 }
 break
-case 'igtv': {	            
+case 'igreel': {	            
 if (!text) throw '*Enter a Link Query!*'
 const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
 if (!isUrl(args[0]) && !args[0].includes('instagram.com')) throw '*The link you provided is not valid*'
@@ -5242,7 +5192,7 @@ Wizard.sendMessage(m.chat, { image: buf, jpegThumbnail:buf, caption: `PhotoFilte
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: fs.readFileSync(`./drips.jpg`) ,
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5375,7 +5325,7 @@ Wizard.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.bot
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: fs.readFileSync(`./drips.jpg`) ,
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5418,7 +5368,7 @@ Wizard.sendMessage(m.chat, { image: anu, caption: `*PHOTO OXY ${command}*` , quo
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: fs.readFileSync(`./drips.jpg`) ,
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5447,7 +5397,7 @@ Wizard.sendMessage(m.chat, { image: anu, caption: `*EPHOTO ${command}*` ,  quote
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: fs.readFileSync(`./drips.jpg`) ,
+  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -6948,7 +6898,7 @@ anu = `
  𝚐𝚛𝚘𝚞𝚙𝚒𝚗𝚏𝚘 -𝚊𝚍𝚖𝚒𝚗-
  𝚊𝚗𝚝𝚒𝚟𝚗 -𝚊𝚍𝚖𝚒𝚗-
  𝚊𝚗𝚝𝚒𝚙𝚑𝚘𝚝𝚘 -𝚊𝚍𝚖𝚒𝚗-
- 𝚊𝚗𝚝𝚒𝚜𝚝𝚒𝚌𝚔𝚎𝚛 -𝚊𝚍𝚖𝚒𝚗-
+ 𝚊𝚗??𝚒𝚜𝚝𝚒𝚌𝚔𝚎𝚛 -𝚊𝚍𝚖𝚒𝚗-
  𝚊𝚗𝚝𝚒𝚟𝚒𝚍𝚎𝚘 -𝚊𝚍𝚖𝚒𝚗-
  𝚊𝚗𝚝𝚒𝚕𝚒𝚗𝚔𝚊𝚕𝚕 -𝚊𝚍𝚖𝚒𝚗-
  𝚊𝚗𝚝𝚒𝚒𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖 -𝚊𝚍𝚖𝚒𝚗-
@@ -7519,7 +7469,7 @@ anu = `
       body:caption,
       showAdAttribution: true,
       mediaType:2,
-      thumbnail: fs.readFileSync(`./drips.jpg`) ,
+      thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
       mediaUrl:tutorial, 
     sourceUrl: tutorial
     }}}, {quoted:m})
