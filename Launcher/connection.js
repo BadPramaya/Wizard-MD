@@ -91,7 +91,6 @@ emeraldawal: 5,
 umpanawal: 5,
 potionawal: 1
 }
-global.thumb = fs.readFileSync('./drips.jpg')
 global.visoka = { url: 'https://i.imgur.com/LbmTdhf.mp4' }
 global.vid = { url: 'https://i.imgur.com/LbmTdhf.mp4' }
 
