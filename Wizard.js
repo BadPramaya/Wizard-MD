@@ -1157,7 +1157,7 @@ setInterval(() => {
 //But5Loc
 var nextMinutes = Math.random() * 300 + 30;
 setTimeout(function(){
-  Wizard.sendMessage(Wizard.user.id, {text: `*Wizard MD ANNOUNCEMENT:* *SUBSCRIBE TO OUR CHANNEL*\n\n*YOUTUBE:* https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*`,contextInfo: { externalAdReply:{title:botname,body:caption,showAdAttribution: true,mediaType:2,thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
+  Wizard.sendMessage(Wizard.user.id, {text: `*Wizard MD ANNOUNCEMENT:* *SUBSCRIBE TO OUR CHANNEL*\n\n*YOUTUBE:* https://youtube.com/channel/UCLegt7MKqNBxJjIkE_QNPdA\n\n*NEW FEATURES COMING SOON SO STAY TUNED*\n\n*FEEL FREE TO BRING IDEAS OF THE FEATURES ON THE TABLE*`,contextInfo: { externalAdReply:{title:botname,body:caption,showAdAttribution: true,mediaType:2,thumbnail: thumbwiz ,mediaUrl:tutorial, sourceUrl: tutorial }}}, {quoted: m})
   //anouncement by drips 
 }, nextMinutes * 300 * 1000);
 const send5Butlmg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
@@ -2204,7 +2204,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   title: watermark,
   body: caption, 
   showAdAttribution: true,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}),
+  thumbnail: thumbwiz,
   mediaType:1,
   mediaUrl: 'github.com/Ajmal-Achu',
   sourceUrl: "github.com/Ajmal-Achu"
@@ -2231,7 +2231,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
   title:"DONATE ME",
   body: caption, 
   showAdAttribution: true,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}),
+  thumbnail: thumbwiz,
   mediaType:1,
   mediaUrl: 'github.com/Ajmal-Achu',
   sourceUrl: "github.com/Ajmal-Achu"
@@ -3303,7 +3303,7 @@ if (!regex1.test(args[0])) throw 'link!'
         body:caption,
         showAdAttribution: true,
         mediaType:2,
-        thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+        thumbnail: thumbwiz ,
         mediaUrl:tutorial, 
         sourceUrl: tutorial }}}, {quoted: m})
 break
@@ -4189,7 +4189,7 @@ title:botname,
 body:caption,
 showAdAttribution: true,
 mediaType:2,
-thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+thumbnail: thumbwiz ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4209,7 +4209,7 @@ title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
-thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+thumbnail: thumbwiz ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4234,7 +4234,7 @@ title:botname,
 body:"DRIPS",
 showAdAttribution: true,
 mediaType:2,
-thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+thumbnail: thumbwiz ,
 mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4307,7 +4307,7 @@ Wizard.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+  thumbnail: thumbwiz ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -4470,7 +4470,7 @@ case 'fbdl': case 'fb': case 'facebook': case 'fbvideo': {
       body:caption,
       showAdAttribution: true,
       mediaType:2,
-      thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+      thumbnail: thumbwiz ,
       mediaUrl:tutorial, 
       sourceUrl: tutorial }}}, {quoted: m})
      
@@ -5193,7 +5193,7 @@ Wizard.sendMessage(m.chat, { image: buf, jpegThumbnail:buf, caption: `PhotoFilte
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+  thumbnail: thumbwiz ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5326,7 +5326,7 @@ Wizard.sendMessage(m.chat, { image: { url: anu }, caption: `Made by ${global.bot
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+  thumbnail: thumbwiz ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5369,7 +5369,7 @@ Wizard.sendMessage(m.chat, { image: anu, caption: `*PHOTO OXY ${command}*` , quo
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+  thumbnail: thumbwiz ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -5398,7 +5398,7 @@ Wizard.sendMessage(m.chat, { image: anu, caption: `*EPHOTO ${command}*` ,  quote
   body:caption,
   showAdAttribution: true,
   mediaType:2,
-  thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+  thumbnail: thumbwiz ,
   mediaUrl:tutorial, 
 sourceUrl: tutorial }}}, {quoted: m})
 }
@@ -7470,7 +7470,7 @@ anu = `
       body:caption,
       showAdAttribution: true,
       mediaType:2,
-      thumbnail: await axios.get (global.logo, {responseType:'arraybuffer'}) ,
+      thumbnail: thumbwiz ,
       mediaUrl:tutorial, 
     sourceUrl: tutorial
     }}}, {quoted:m})
