@@ -3,7 +3,7 @@ const { Schema } = mongoose
 
 module.exports = class mongoDB {
   constructor(url, options = { useNewUrlParser: true, useUnifiedTopology: true }) {
-    this.url = url
+    this.url = process.env.MONGO_DB_URL
     this.data = this._data = this._schema = this._model = {}
     this.db
     this.options = options
