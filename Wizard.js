@@ -43,6 +43,7 @@ const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLeveli
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./Library/limit')
 //xp and leveling database⧈⧈⧈⧈
  
+let thumbwiz = await (await fetch('https://telegra.ph/file/e0bc28185977299bf5d2c.jpg')).buffer()
 //message type
 /* let drips = thumbwiz 
 */
@@ -78,7 +79,6 @@ let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
 
 module.exports = Wizard = async (Wizard, m, chatUpdate, store) => {
-let thumbwiz = {url:global.logo}
 let thumb = thumbwiz
 try {
 var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
