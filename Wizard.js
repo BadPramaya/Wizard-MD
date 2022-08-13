@@ -43,7 +43,7 @@ const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLeveli
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./Library/limit')
 //xp and leveling database⧈⧈⧈⧈
  
-let thumbwiz = await (await fetch('https://telegra.ph/file/e0bc28185977299bf5d2c.jpg')).buffer()
+let thumbwiz = fs.readFileSync('./Library/drips.jpg')
 //message type
 /* let drips = fs.readFileSync('./Library/drips.jpg')
 */
