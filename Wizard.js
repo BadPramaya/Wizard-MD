@@ -45,7 +45,7 @@ const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBa
  
 let thumbwiz = await (await fetch('https://telegra.ph/file/e0bc28185977299bf5d2c.jpg')).buffer()
 //message type
-/* let drips = thumbwiz 
+/* let drips = fs.readFileSync('./Library/drips.jpg')
 */
 
 //database
