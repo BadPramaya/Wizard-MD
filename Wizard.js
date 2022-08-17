@@ -43,9 +43,9 @@ const { addLevelingId, addLevelingLevel ,addLevelingXp, getLevelingId, getLeveli
 const { isLimit, limitAdd, getLimit, giveLimit, addBalance, kurangBalance, getBalance, isGame, gameAdd, givegame, cekGLimit } = require('./Library/limit')
 //xp and leveling database⧈⧈⧈⧈
  
-let thumbwiz = fs.readFileSync('./Library/IMG_20220814_232921.jpg')
+let thumbwiz = getBuffer(global.logo)
 //message type
-/* let drips = fs.readFileSync('./Library/IMG_20220814_232921.jpg')
+/* let drips = thumbwiz
 */
 
 //database
