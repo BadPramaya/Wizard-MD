@@ -22,36 +22,19 @@
 </div>
 ---
 
-# WIZARD MD
 
 <div align="center">
-  
-# `❗❗FORK THIS BEFORE PROCEEDING`
- 
- `Use This Button To Fork Now`
-  
-  <a href="https://github.com/Ajmal-Achu/Wizard-MD/fork"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://github.com/Alien-alfa/Alien-alfa/blob/beta/img/pngegg.png?raw=true" width="100"></a>
-<br>
-## `Scan QR Code For Session`
- 
-[![Run on Repl.it](https://repl.it/badge/github/quiec/whatsAlfa)](https://millie-qr.up.railway.app/)
 
-  ## `Deploy In Heroku`
+### DEPLOY THROUGH HEROKU
 
+<a href="wizard-md-deployer.vercel.app"><img align="center" src="https://telegra.ph/file/a012500af2b0419e3d989.jpg" alt="Fork and deploy" height="50" width="500" /></a>
+</div>
 
-<a href="https://heroku.com/deploy?template=https://github.com/Ajmal-Achu/BETA"><img title="ＡＬＩＥＮ ＡＬＦＡ" src="https://www.herokucdn.com/deploy/button.svg" width="200"></a>
+---
 
-### Preview bot
-
-- [x] Welcome <details><summary>Screenshot</summary><img src="https://telegra.ph/file/e7adc19143c17cebece3c.jpg"></details>
-- [x] Catalog Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
-- [x] Setmenu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/5094eb58f19a49543443a.jpg"></details>
-- [x] Document Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/8f50df332fe50495a4853.jpg"></details>
-
-And Many More Features Are Available 😊
 
 ### FOR TERMUX USER
-1. Type mentioned below given commands one by one in Termux.
+1. Type below given commands one by one in Termux.
 ```
 apt update && apt upgrade
 apt install bash
@@ -66,6 +49,16 @@ cd Wizard-MD
 rm -r session.json
 node.
 ```  
+
+### Preview bot
+
+- [x] Welcome <details><summary>Screenshot</summary><img src="https://telegra.ph/file/e7adc19143c17cebece3c.jpg"></details>
+- [x] Catalog Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/7c33c8442aa5c551309ef.jpg"></details>
+- [x] Setmenu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/5094eb58f19a49543443a.jpg"></details>
+- [x] Document Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/8f50df332fe50495a4853.jpg"></details>
+
+And Many More Features Are Available 😊
+
 
 <!---->
 # Thanks to
