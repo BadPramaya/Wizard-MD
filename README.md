@@ -27,7 +27,7 @@
 
 ### DEPLOY THROUGH HEROKU
 
-<a href="wizard-md-deployer.vercel.app"><img align="center" src="https://telegra.ph/file/a012500af2b0419e3d989.jpg" alt="Fork and deploy" height="50" width="200" /></a>
+<a href="https://wizard-md-deployer.vercel.app/"><img align="center" src="https://telegra.ph/file/a012500af2b0419e3d989.jpg" alt="Fork and deploy" height="50" width="200" /></a>
 </div>
 
 ---
